@@ -4,12 +4,12 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication application(argc, argv);
 
     Inint init;
 
     init.initialization();
     init.objWidget->show();
 
-    return a.exec();
+    return application.exec();
 }

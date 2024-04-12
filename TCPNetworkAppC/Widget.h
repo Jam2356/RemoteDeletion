@@ -12,6 +12,9 @@ class Widget : public QWidget
 {
     Q_OBJECT
 
+private:
+    Ui::Widget *ui;
+
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
@@ -19,9 +22,6 @@ public:
 private slots:
     void on_pushButton_connect_clicked();
     void on_pushButton_deleteFile_clicked();
-
-private:
-    Ui::Widget *ui;
 
 signals:
     void signalConnectClicked();

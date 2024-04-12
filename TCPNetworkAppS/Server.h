@@ -13,16 +13,21 @@ class Server : public QObject
 public:
     explicit Server(QObject *parent = nullptr);
 
+    void startListen();
+
 private:
     QTcpServer * server;
 
     QList<QTcpSocket *> sockets;
+
+    void debugAndUi(QString string);
 
 public slots:
     void newConnection();
     void slotReadClient();
 
 signals:
+    void signalStringToUi(QString string);
 
 };
 

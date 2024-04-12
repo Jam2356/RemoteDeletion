@@ -11,10 +11,11 @@ class Inint : public QObject
     Q_OBJECT
 public:
     explicit Inint(QObject *parent = nullptr);
-    void initialization();
 
     Widget *objWidget;
     Connection *objConnection;
+
+    void initialization();
 
 signals:
 

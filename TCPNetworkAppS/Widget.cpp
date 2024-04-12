@@ -1,4 +1,4 @@
-#include "Widget.h"
+﻿#include "Widget.h"
 #include "ui_Widget.h"
 
 Widget::Widget(QWidget *parent)
@@ -13,3 +13,6 @@ Widget::~Widget()
     delete ui;
 }
 
+void Widget::slotStringToUi(QString string) {
+    ui->textBrowser->append(string);
+}

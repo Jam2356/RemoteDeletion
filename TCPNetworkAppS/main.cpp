@@ -1,13 +1,13 @@
-﻿#include "Widget.h"
-#include "Server.h"
+﻿#include "Init.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    Widget w;
-    w.show();
-    Server server;
-    return a.exec();
+    QApplication application(argc, argv);
+    Init ini;
+
+    ini.ui->show();
+
+    return application.exec();
 }

@@ -1,4 +1,4 @@
-#ifndef WIDGET_H
+﻿#ifndef WIDGET_H
 #define WIDGET_H
 
 #include <QWidget>
@@ -11,11 +11,16 @@ class Widget : public QWidget
 {
     Q_OBJECT
 
-public:
-    Widget(QWidget *parent = nullptr);
-    ~Widget();
-
 private:
     Ui::Widget *ui;
+
+public:
+    explicit Widget(QWidget *parent = nullptr);
+    ~Widget();
+
+private slots:
+    void slotStringToUi(QString string);
+
 };
+
 #endif // WIDGET_H
