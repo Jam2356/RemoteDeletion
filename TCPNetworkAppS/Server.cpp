@@ -41,27 +41,14 @@ void Server::newConnection() {
 }
 
 void Server::slotReadClient() {
-    int i = 0;
-    for(QTcpSocket *socket : sockets){
-        if(i == 0) {
-            QByteArray data = socket->readAll();
-            QString a;
-            a.append(data.constData());
-            if(!a.isEmpty()){
-                debugAndUi(data.constData());
-            }
-            socket->write("1");
-        }
-        else {
-            QByteArray data = socket->readAll();
-            QString a;
-            a.append(data.constData());
-            if(!a.isEmpty()){
-                debugAndUi(data.constData());
-            }
+    for(QTcpSocket *socket : sockets) {
+        QByteArray data = socket->readAll();
+        QString a;
+        a.append(data.constData());
+        if(!a.isEmpty()){
+            debugAndUi(data.constData());
             socket->write(std::to_string(sockets.indexOf(socket, 0)+1).c_str());
         }
-        i++;
     }
 
 }
