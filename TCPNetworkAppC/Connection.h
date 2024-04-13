@@ -15,13 +15,15 @@ public:
 private:
     QTcpSocket * mySocket;
     bool flagIsOnline = false;
-//    const char* callSign = "Alpha: ";
+
+    void debugAndUi(QString string);
 
 public slots:
     void slotConnectClicked();
     void slotDeleteFileClicked(QString fileName);
 
 signals:
+    void signalStringToUi(QString string);
 
 };
 

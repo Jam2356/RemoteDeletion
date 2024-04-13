@@ -13,4 +13,8 @@ void Inint::initialization() {
 
     connect(objWidget, SIGNAL(signalDeleteFileClicked(QString)),
             objConnection, SLOT(slotDeleteFileClicked(QString)));
+
+    connect(objConnection, SIGNAL(signalStringToUi(QString)),
+            objWidget, SLOT(slotStringToUi(QString)));
+
 }

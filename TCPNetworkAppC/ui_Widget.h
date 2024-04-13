@@ -11,11 +11,15 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -24,78 +28,119 @@ class Ui_Widget
 {
 public:
     QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_3;
+    QHBoxLayout *horizontalLayout_2;
+    QTextBrowser *textBrowser;
+    QFormLayout *formLayout_2;
+    QLabel *label;
     QPushButton *pushButton_connect;
     QLabel *label_3;
-    QSpacerItem *horizontalSpacer;
-    QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton;
+    QLabel *label_4;
+    QPushButton *pushButton_2;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout_2;
     QLabel *label_2;
     QLineEdit *lineEdit;
-    QLabel *label;
+    QVBoxLayout *verticalLayout;
+    QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton_deleteFile;
-    QPushButton *pushButton_2;
-    QLabel *label_4;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(286, 156);
+        Widget->resize(470, 360);
+        Widget->setMinimumSize(QSize(470, 360));
+        Widget->setMaximumSize(QSize(470, 470));
         gridLayout = new QGridLayout(Widget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        textBrowser = new QTextBrowser(Widget);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+
+        horizontalLayout_2->addWidget(textBrowser);
+
+        formLayout_2 = new QFormLayout();
+        formLayout_2->setObjectName(QString::fromUtf8("formLayout_2"));
+        label = new QLabel(Widget);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        formLayout_2->setWidget(0, QFormLayout::LabelRole, label);
+
         pushButton_connect = new QPushButton(Widget);
         pushButton_connect->setObjectName(QString::fromUtf8("pushButton_connect"));
 
-        gridLayout->addWidget(pushButton_connect, 0, 2, 1, 1);
+        formLayout_2->setWidget(0, QFormLayout::FieldRole, pushButton_connect);
 
         label_3 = new QLabel(Widget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        gridLayout->addWidget(label_3, 1, 1, 1, 1);
-
-        horizontalSpacer = new QSpacerItem(76, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer, 0, 0, 1, 1);
-
-        horizontalSpacer_2 = new QSpacerItem(141, 18, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_2, 3, 1, 1, 2);
+        formLayout_2->setWidget(1, QFormLayout::LabelRole, label_3);
 
         pushButton = new QPushButton(Widget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
 
-        gridLayout->addWidget(pushButton, 1, 2, 1, 1);
+        formLayout_2->setWidget(1, QFormLayout::FieldRole, pushButton);
 
-        label_2 = new QLabel(Widget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_4 = new QLabel(Widget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
 
-        gridLayout->addWidget(label_2, 3, 0, 1, 1);
-
-        lineEdit = new QLineEdit(Widget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-
-        gridLayout->addWidget(lineEdit, 4, 0, 1, 2);
-
-        label = new QLabel(Widget);
-        label->setObjectName(QString::fromUtf8("label"));
-
-        gridLayout->addWidget(label, 0, 1, 1, 1);
-
-        pushButton_deleteFile = new QPushButton(Widget);
-        pushButton_deleteFile->setObjectName(QString::fromUtf8("pushButton_deleteFile"));
-
-        gridLayout->addWidget(pushButton_deleteFile, 4, 2, 1, 1);
+        formLayout_2->setWidget(2, QFormLayout::LabelRole, label_4);
 
         pushButton_2 = new QPushButton(Widget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setEnabled(false);
 
-        gridLayout->addWidget(pushButton_2, 2, 2, 1, 1);
+        formLayout_2->setWidget(2, QFormLayout::FieldRole, pushButton_2);
 
-        label_4 = new QLabel(Widget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
 
-        gridLayout->addWidget(label_4, 2, 1, 1, 1);
+        horizontalLayout_2->addLayout(formLayout_2);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_2);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        label_2 = new QLabel(Widget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        verticalLayout_2->addWidget(label_2);
+
+        lineEdit = new QLineEdit(Widget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setMinimumSize(QSize(330, 24));
+
+        verticalLayout_2->addWidget(lineEdit);
+
+
+        horizontalLayout->addLayout(verticalLayout_2);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        horizontalSpacer_2 = new QSpacerItem(88, 18, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        verticalLayout->addItem(horizontalSpacer_2);
+
+        pushButton_deleteFile = new QPushButton(Widget);
+        pushButton_deleteFile->setObjectName(QString::fromUtf8("pushButton_deleteFile"));
+        pushButton_deleteFile->setMaximumSize(QSize(100, 24));
+
+        verticalLayout->addWidget(pushButton_deleteFile);
+
+
+        horizontalLayout->addLayout(verticalLayout);
+
+
+        verticalLayout_3->addLayout(horizontalLayout);
+
+
+        gridLayout->addLayout(verticalLayout_3, 0, 0, 1, 1);
 
 
         retranslateUi(Widget);
@@ -106,14 +151,14 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
+        label->setText(QCoreApplication::translate("Widget", "Connect to Server:", nullptr));
         pushButton_connect->setText(QCoreApplication::translate("Widget", "Connect", nullptr));
         label_3->setText(QCoreApplication::translate("Widget", "Become at admin:", nullptr));
         pushButton->setText(QCoreApplication::translate("Widget", "Admin mod", nullptr));
-        label_2->setText(QCoreApplication::translate("Widget", "Inter file name:", nullptr));
-        label->setText(QCoreApplication::translate("Widget", "Connect to Server:", nullptr));
-        pushButton_deleteFile->setText(QCoreApplication::translate("Widget", "Delete file", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Widget", "Start", nullptr));
         label_4->setText(QCoreApplication::translate("Widget", "Special abilities:", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("Widget", "Start", nullptr));
+        label_2->setText(QCoreApplication::translate("Widget", "Inter file name:", nullptr));
+        pushButton_deleteFile->setText(QCoreApplication::translate("Widget", "Delete file", nullptr));
     } // retranslateUi
 
 };
