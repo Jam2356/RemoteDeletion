@@ -1,8 +1,7 @@
 ﻿#include "Init.h"
 
 Init::Init(QObject *parent)
-    : QObject{parent}
-{
+    : QObject{parent} {
     ui = new Widget;
     server = new Server;
     this->init();

@@ -15,6 +15,7 @@ SOURCES += \
     main.cpp
 
 HEADERS += \
+    EnumPackHeader.h \
     Init.h \
     Server.h \
     Widget.h

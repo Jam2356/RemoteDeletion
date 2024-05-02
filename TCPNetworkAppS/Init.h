@@ -6,8 +6,7 @@
 #include "Widget.h"
 #include "Server.h"
 
-class Init : public QObject
-{
+class Init : public QObject {
     Q_OBJECT
 public:
     explicit Init(QObject *parent = nullptr);

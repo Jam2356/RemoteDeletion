@@ -17,6 +17,7 @@ SOURCES += \
 
 HEADERS += \
     Connection.h \
+    EnumPackHeader.h \
     Inint.h \
     Widget.h
 

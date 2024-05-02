@@ -5,10 +5,11 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 
+#include <EnumPackHeader.h>
+
 #include <QDebug>
 
-class Server : public QObject
-{
+class Server : public QObject {
     Q_OBJECT
 public:
     explicit Server(QObject *parent = nullptr);
@@ -17,10 +18,11 @@ public:
 
 private:
     QTcpServer * server;
-
     QList<QTcpSocket *> sockets;
 
     void debugAndUi(QString string);
+    void parsingPacket(QString string, QTcpSocket * socket);
+    QString packetToString(QString string);
 
 public slots:
     void newConnection();

@@ -4,8 +4,9 @@
 #include <QObject>
 #include <QTcpSocket>
 
-class Connection : public QObject
-{
+#include <EnumPackHeader.h>
+
+class Connection : public QObject {
     Q_OBJECT
 public:
     explicit Connection(QObject *parent = nullptr);
@@ -17,6 +18,8 @@ private:
     bool flagIsOnline = false;
 
     void debugAndUi(QString string);
+    void parsingPacket(QString string);
+    QString packetToString(QString string);
 
 public slots:
     void slotConnectClicked();

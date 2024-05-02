@@ -6,8 +6,7 @@
 #include "Connection.h"
 #include "Widget.h"
 
-class Inint : public QObject
-{
+class Inint : public QObject {
     Q_OBJECT
 public:
     explicit Inint(QObject *parent = nullptr);

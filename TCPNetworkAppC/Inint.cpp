@@ -1,8 +1,7 @@
 ﻿#include "Inint.h"
 
 Inint::Inint(QObject *parent)
-    : QObject{parent}
-{
+    : QObject{parent} {
     objWidget = new Widget;
     objConnection = new Connection;
 }
