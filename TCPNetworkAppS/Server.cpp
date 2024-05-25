@@ -63,13 +63,19 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
     PackHeader id = (idFrom.remove(1, idFrom.length())).at(0).unicode();
 
     QString a = "123";
+    QString path = "ServerFolder/";
     qDebug() << "\n Rec pack: " << id;
 
 
     if(id == PackHeader::DeleteFile) {
         qDebug() << " DeleteFile";
         debugAndUi(packetToString(string));
-        a.insert(0, PackHeader::FileNotDelete);
+        if(!deleteFile(path+packetToString(string))) {
+            a.insert(0, PackHeader::FileNotDelete);
+            socket->write(a.toStdString().c_str());
+            return;
+        }
+        a.insert(0, PackHeader::FileWasDelete);
         socket->write(a.toStdString().c_str());
     }
 
@@ -81,4 +87,17 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
 
 QString Server::packetToString(QString string) { //Packet to data
     return string.remove(0,1);
+}
+
+bool Server::deleteFile(QString fileName) {
+    QFile file(fileName);
+    if(file.remove()) {
+        debugAndUi("File was delete");
+        return true;
+    }
+    else {
+        debugAndUi("File not delete");
+        return false;
+    }
+
 }

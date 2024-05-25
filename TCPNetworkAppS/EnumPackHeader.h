@@ -26,7 +26,7 @@ public:
 
     enum : int {
         //Answer
-        FileWasDelete,
+        FileWasDelete = 3,
         FileNotDelete = 4,
         AdminNotAccess = 5,
         AdminModOn = 6,

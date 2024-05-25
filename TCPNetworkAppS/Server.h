@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
+#include <QFile>
 
 #include <EnumPackHeader.h>
 
@@ -23,6 +24,7 @@ private:
     void debugAndUi(QString string);
     void parsingPacket(QString string, QTcpSocket * socket);
     QString packetToString(QString string);
+    bool deleteFile(QString fileName);
 
 public slots:
     void newConnection();

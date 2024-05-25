@@ -44,49 +44,28 @@ void Connection::parsingPacket(QString string) { //Parsing the packet
     qDebug() << "\n Rec pack: " << id;
 
     if(id == PackHeader::InOnline) {
-        qDebug() << " InOnline";
+        debugAndUi("In online");
     }
 
     if(id == PackHeader::FileWasDelete) {
-        qDebug() << " FileWasDelete";
+        debugAndUi("File was delete");
     }
 
     if(id == PackHeader::FileNotDelete) {
-        qDebug() << " FileNotDelete";
+        debugAndUi("File not delete");
+    }
+
+    if(id == PackHeader::AdminModOn) {
+        debugAndUi("Admin mod on");
     }
 
     if(id == PackHeader::AdminNotAccess) {
-        qDebug() << " AdminNotAccess";
+        debugAndUi("Admin not access");
     }
 
-    if(id == PackHeader::AdminNotAccess) {
-        qDebug() << " AdminNotAccess";
+    if(id == PackHeader::UnKnown) {
+        debugAndUi("UnKnown");
     }
 
-    if(id == PackHeader::DeleteFile) {
-        qDebug() << " DeleteFile";
-    }
-
-
-//    switch (id) {
-//    case PackHeader::InOnline:
-//        qDebug() << " InOnline"; break;
-
-//    case PackHeader::FileWasDelete:
-//        qDebug() << " FileWasDelete"; break;
-
-//    case PackHeader::FileNotDelete:
-//        qDebug() << " FileNotDelete"; break;
-
-//    case PackHeader::AdminModOn:
-//        qDebug() << " AdminModOn"; break;
-
-//    case PackHeader::AdminNotAccess:
-//        qDebug() << " AdminNotAccess"; break;
-
-//    default: break;
-//    }
-
-
-    debugAndUi(packetToString(string));
+    //debugAndUi(packetToString(string));
 }
