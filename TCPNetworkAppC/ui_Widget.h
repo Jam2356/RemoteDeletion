@@ -35,7 +35,7 @@ public:
     QLabel *label;
     QPushButton *pushButton_connect;
     QLabel *label_3;
-    QPushButton *pushButton;
+    QPushButton *pushButton_admin;
     QLabel *label_4;
     QPushButton *pushButton_2;
     QHBoxLayout *horizontalLayout;
@@ -81,10 +81,10 @@ public:
 
         formLayout_2->setWidget(1, QFormLayout::LabelRole, label_3);
 
-        pushButton = new QPushButton(Widget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton_admin = new QPushButton(Widget);
+        pushButton_admin->setObjectName(QString::fromUtf8("pushButton_admin"));
 
-        formLayout_2->setWidget(1, QFormLayout::FieldRole, pushButton);
+        formLayout_2->setWidget(1, QFormLayout::FieldRole, pushButton_admin);
 
         label_4 = new QLabel(Widget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
@@ -154,7 +154,7 @@ public:
         label->setText(QCoreApplication::translate("Widget", "Connect to Server:", nullptr));
         pushButton_connect->setText(QCoreApplication::translate("Widget", "Connect", nullptr));
         label_3->setText(QCoreApplication::translate("Widget", "Become at admin:", nullptr));
-        pushButton->setText(QCoreApplication::translate("Widget", "Admin mod", nullptr));
+        pushButton_admin->setText(QCoreApplication::translate("Widget", "Admin mod", nullptr));
         label_4->setText(QCoreApplication::translate("Widget", "Special abilities:", nullptr));
         pushButton_2->setText(QCoreApplication::translate("Widget", "Start", nullptr));
         label_2->setText(QCoreApplication::translate("Widget", "Inter file name:", nullptr));

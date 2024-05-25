@@ -20,6 +20,7 @@ public:
 private:
     QTcpServer * server;
     QList<QTcpSocket *> sockets;
+    QString password = "pass";
 
     void debugAndUi(QString string);
     void parsingPacket(QString string, QTcpSocket * socket);

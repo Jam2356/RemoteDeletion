@@ -19,13 +19,17 @@ public:
     ~Widget();
 
 private slots:
+    void slotStringToUi(QString string);
+
+    //Buttons
     void on_pushButton_connect_clicked();
     void on_pushButton_deleteFile_clicked();
-    void slotStringToUi(QString string);
+    void on_pushButton_admin_clicked();
 
 signals:
     void signalConnectClicked();
     void signalDeleteFileClicked(QString fileName);
+    void signalAdminModTurnOn();
 
 };
 #endif // WIDGET_H

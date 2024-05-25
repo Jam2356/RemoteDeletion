@@ -27,6 +27,13 @@ void Connection::slotDeleteFileClicked(QString fileName) {
 
 }
 
+void Connection::slotAdminModTurnOn() {
+    QString message = "pass";
+    message.insert(0, QString(PackHeader::AdminMod));
+    mySocket->write(message.toStdString().c_str());
+
+}
+
 void Connection::debugAndUi(QString string) { //Prepare the packet to Ui
     emit signalStringToUi(string);
     qDebug() << string;
@@ -57,6 +64,8 @@ void Connection::parsingPacket(QString string) { //Parsing the packet
 
     if(id == PackHeader::AdminModOn) {
         debugAndUi("Admin mod on");
+        //received names
+        //enable button
     }
 
     if(id == PackHeader::AdminNotAccess) {

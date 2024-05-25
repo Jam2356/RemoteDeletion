@@ -236,6 +236,7 @@ debug/moc_Init.cpp: Init.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/qhostaddress.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/QTcpSocket \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/qtcpsocket.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QFile \
 		EnumPackHeader.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
 		debug/moc_predefs.h \
@@ -316,6 +317,9 @@ debug/moc_Server.cpp: Server.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/qhostaddress.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/QTcpSocket \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/qtcpsocket.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QFile \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
 		EnumPackHeader.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
 		debug/moc_predefs.h \
@@ -568,6 +572,7 @@ debug/Init.o: Init.cpp Init.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/qhostaddress.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/QTcpSocket \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/qtcpsocket.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QFile \
 		EnumPackHeader.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Init.o Init.cpp
@@ -646,6 +651,9 @@ debug/Server.o: Server.cpp Server.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/qhostaddress.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/QTcpSocket \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/qtcpsocket.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QFile \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
 		EnumPackHeader.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Server.o Server.cpp
@@ -872,6 +880,7 @@ debug/main.o: main.cpp Init.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/qhostaddress.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/QTcpSocket \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/qtcpsocket.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QFile \
 		EnumPackHeader.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
 		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \

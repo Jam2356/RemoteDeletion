@@ -24,6 +24,7 @@ private:
 public slots:
     void slotConnectClicked();
     void slotDeleteFileClicked(QString fileName);
+    void slotAdminModTurnOn();
 
 signals:
     void signalStringToUi(QString string);

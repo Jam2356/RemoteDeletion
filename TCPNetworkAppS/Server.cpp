@@ -80,7 +80,23 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
     }
 
     if(id == PackHeader::AdminMod) {
-        qDebug() << " AdminMod";
+        //Checking
+        //...
+        //Password
+        //Send list users
+        debugAndUi("AdminMod request");
+        if(packetToString(string) != password) {
+            debugAndUi("Received password incorrect");
+            a.insert(0, PackHeader::AdminNotAccess);
+            socket->write(a.toStdString().c_str());
+            return;
+        }
+
+        debugAndUi("Received password correct");
+        //blocking to all function AdminMod
+        //send names
+        a.insert(0, PackHeader::AdminModOn);
+        socket->write(a.toStdString().c_str());
     }
 
 }
