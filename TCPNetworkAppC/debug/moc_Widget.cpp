@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Widget_t {
     QByteArrayData data[11];
-    char stringdata0[196];
+    char stringdata0[193];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,17 +37,17 @@ QT_MOC_LITERAL(1, 7, 20), // "signalConnectClicked"
 QT_MOC_LITERAL(2, 28, 0), // ""
 QT_MOC_LITERAL(3, 29, 23), // "signalDeleteFileClicked"
 QT_MOC_LITERAL(4, 53, 8), // "fileName"
-QT_MOC_LITERAL(5, 62, 20), // "signalAdminModTurnOn"
-QT_MOC_LITERAL(6, 83, 14), // "slotStringToUi"
-QT_MOC_LITERAL(7, 98, 6), // "string"
-QT_MOC_LITERAL(8, 105, 29), // "on_pushButton_connect_clicked"
-QT_MOC_LITERAL(9, 135, 32), // "on_pushButton_deleteFile_clicked"
-QT_MOC_LITERAL(10, 168, 27) // "on_pushButton_admin_clicked"
+QT_MOC_LITERAL(5, 62, 17), // "signalShowRequest"
+QT_MOC_LITERAL(6, 80, 14), // "slotStringToUi"
+QT_MOC_LITERAL(7, 95, 6), // "string"
+QT_MOC_LITERAL(8, 102, 29), // "on_pushButton_connect_clicked"
+QT_MOC_LITERAL(9, 132, 32), // "on_pushButton_deleteFile_clicked"
+QT_MOC_LITERAL(10, 165, 27) // "on_pushButton_admin_clicked"
 
     },
     "Widget\0signalConnectClicked\0\0"
     "signalDeleteFileClicked\0fileName\0"
-    "signalAdminModTurnOn\0slotStringToUi\0"
+    "signalShowRequest\0slotStringToUi\0"
     "string\0on_pushButton_connect_clicked\0"
     "on_pushButton_deleteFile_clicked\0"
     "on_pushButton_admin_clicked"
@@ -100,7 +100,7 @@ void Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         switch (_id) {
         case 0: _t->signalConnectClicked(); break;
         case 1: _t->signalDeleteFileClicked((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 2: _t->signalAdminModTurnOn(); break;
+        case 2: _t->signalShowRequest(); break;
         case 3: _t->slotStringToUi((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 4: _t->on_pushButton_connect_clicked(); break;
         case 5: _t->on_pushButton_deleteFile_clicked(); break;
@@ -125,7 +125,7 @@ void Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         }
         {
             using _t = void (Widget::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Widget::signalAdminModTurnOn)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Widget::signalShowRequest)) {
                 *result = 2;
                 return;
             }
@@ -187,7 +187,7 @@ void Widget::signalDeleteFileClicked(QString _t1)
 }
 
 // SIGNAL 2
-void Widget::signalAdminModTurnOn()
+void Widget::signalShowRequest()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }

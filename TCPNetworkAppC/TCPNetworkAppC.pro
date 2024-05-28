@@ -12,6 +12,7 @@ CONFIG += c++17
 SOURCES += \
     Connection.cpp \
     Inint.cpp \
+    RequestPassword.cpp \
     main.cpp \
     Widget.cpp
 
@@ -19,9 +20,11 @@ HEADERS += \
     Connection.h \
     EnumPackHeader.h \
     Inint.h \
+    RequestPassword.h \
     Widget.h
 
 FORMS += \
+    RequestPassword.ui \
     Widget.ui
 
 # Default rules for deployment.

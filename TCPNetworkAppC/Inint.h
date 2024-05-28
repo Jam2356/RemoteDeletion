@@ -5,6 +5,7 @@
 
 #include "Connection.h"
 #include "Widget.h"
+#include "RequestPassword.h"
 
 class Inint : public QObject {
     Q_OBJECT
@@ -13,6 +14,7 @@ public:
 
     Widget *objWidget;
     Connection *objConnection;
+    RequestPassword *objWRequestPassword;
 
     void initialization();
 

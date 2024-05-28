@@ -16,6 +16,7 @@ public:
 private:
     QTcpSocket * mySocket;
     bool flagIsOnline = false;
+    bool flagIsAdmin = false;
 
     void debugAndUi(QString string);
     void parsingPacket(QString string);
@@ -24,7 +25,7 @@ private:
 public slots:
     void slotConnectClicked();
     void slotDeleteFileClicked(QString fileName);
-    void slotAdminModTurnOn();
+    void slotAdminModTurnOn(QString password);
 
 signals:
     void signalStringToUi(QString string);

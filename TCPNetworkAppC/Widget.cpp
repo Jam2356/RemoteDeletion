@@ -22,7 +22,6 @@ void Widget::slotStringToUi(QString string) {
 //BUTTONS
 void Widget::on_pushButton_connect_clicked() {
     emit signalConnectClicked();
-
 }
 
 void Widget::on_pushButton_deleteFile_clicked() {
@@ -31,7 +30,7 @@ void Widget::on_pushButton_deleteFile_clicked() {
 }
 
 void Widget::on_pushButton_admin_clicked() {
-    emit signalAdminModTurnOn();
+    emit signalShowRequest();
 
 }
 

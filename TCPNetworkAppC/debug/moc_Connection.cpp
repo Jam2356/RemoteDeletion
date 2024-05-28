@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Connection_t {
-    QByteArrayData data[8];
-    char stringdata0[105];
+    QByteArrayData data[9];
+    char stringdata0[114];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,12 +39,13 @@ QT_MOC_LITERAL(3, 29, 6), // "string"
 QT_MOC_LITERAL(4, 36, 18), // "slotConnectClicked"
 QT_MOC_LITERAL(5, 55, 21), // "slotDeleteFileClicked"
 QT_MOC_LITERAL(6, 77, 8), // "fileName"
-QT_MOC_LITERAL(7, 86, 18) // "slotAdminModTurnOn"
+QT_MOC_LITERAL(7, 86, 18), // "slotAdminModTurnOn"
+QT_MOC_LITERAL(8, 105, 8) // "password"
 
     },
     "Connection\0signalStringToUi\0\0string\0"
     "slotConnectClicked\0slotDeleteFileClicked\0"
-    "fileName\0slotAdminModTurnOn"
+    "fileName\0slotAdminModTurnOn\0password"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,7 +68,7 @@ static const uint qt_meta_data_Connection[] = {
  // slots: name, argc, parameters, tag, flags
        4,    0,   37,    2, 0x0a /* Public */,
        5,    1,   38,    2, 0x0a /* Public */,
-       7,    0,   41,    2, 0x0a /* Public */,
+       7,    1,   41,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -75,7 +76,7 @@ static const uint qt_meta_data_Connection[] = {
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    6,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    8,
 
        0        // eod
 };
@@ -89,7 +90,7 @@ void Connection::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->signalStringToUi((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->slotConnectClicked(); break;
         case 2: _t->slotDeleteFileClicked((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 3: _t->slotAdminModTurnOn(); break;
+        case 3: _t->slotAdminModTurnOn((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
