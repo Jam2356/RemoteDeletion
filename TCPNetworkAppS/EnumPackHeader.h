@@ -31,7 +31,7 @@ public:
         AdminNotAccess = 5,
         AdminModOn = 6,
         InOnline = 7,
-        UnKnown = 8,
+        Info = 8,
 
         //Client request
         DeleteFile = 1,
@@ -48,7 +48,7 @@ public:
         case AdminNotAccess:    return 5; break;
         case AdminModOn:        return 6; break;
         case InOnline:          return 7; break;
-        case UnKnown:           return 8; break;
+        case Info:           return 8; break;
         default:
             break;
         }

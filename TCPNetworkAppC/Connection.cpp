@@ -72,8 +72,8 @@ void Connection::parsingPacket(QString string) { //Parsing the packet
         debugAndUi("Admin not access");
     }
 
-    if(id == PackHeader::UnKnown) {
-        debugAndUi("UnKnown");
+    if(id == PackHeader::Info) {
+        debugAndUi(packetToString(string));
     }
 
     //debugAndUi(packetToString(string));

@@ -24,8 +24,10 @@ private:
 
     void debugAndUi(QString string);
     void parsingPacket(QString string, QTcpSocket * socket);
-    QString packetToString(QString string);
     bool deleteFile(QString fileName);
+
+    QString packetToString(QString string);
+    void sendInfoString(QString string, QTcpSocket * socket);
 
 public slots:
     void newConnection();

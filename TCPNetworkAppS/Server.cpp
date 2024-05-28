@@ -23,7 +23,7 @@ void Server::newConnection() {
         return;
 
     debugAndUi("Client connected");
-    socket->write("Hello you connected");
+    sendInfoString("Hello, you are connected!", socket);
 
     socket->waitForReadyRead();
     QByteArray data = socket->readAll();
@@ -47,7 +47,6 @@ void Server::slotReadClient() {
             return;
         }
         parsingPacket(strData, socket);
-//        socket->write(std::to_string(sockets.indexOf(socket, 0)+1).c_str());
     }
 
 }
@@ -103,6 +102,11 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
 
 QString Server::packetToString(QString string) { //Packet to data
     return string.remove(0,1);
+}
+
+void Server::sendInfoString(QString string, QTcpSocket * socket) {
+    string.insert(0, PackHeader::Info);
+    socket->write(string.toStdString().c_str());
 }
 
 bool Server::deleteFile(QString fileName) {
