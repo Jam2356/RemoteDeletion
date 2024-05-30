@@ -19,7 +19,8 @@ public:
 
 private:
     QTcpServer * server;
-    QList<QTcpSocket *> sockets;
+//    QList<QTcpSocket *> sockets;
+    QMap<QTcpSocket *,QString> sockets;
     QString password = "pass";
 
     void debugAndUi(QString string);

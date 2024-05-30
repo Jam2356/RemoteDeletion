@@ -536,7 +536,6 @@ debug/moc_Widget.cpp: Widget.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
-		RequestPassword.h \
 		debug/moc_predefs.h \
 		../../../Qt/5.15.2/mingw81_64/bin/moc.exe
 	F:\Qt\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include F:/GIT/RemoteDeletion/TCPNetworkAppC/debug/moc_predefs.h -IF:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++ -IF:/GIT/RemoteDeletion/TCPNetworkAppC -IF:/Qt/5.15.2/mingw81_64/include -IF:/Qt/5.15.2/mingw81_64/include/QtWidgets -IF:/Qt/5.15.2/mingw81_64/include/QtGui -IF:/Qt/5.15.2/mingw81_64/include/QtANGLE -IF:/Qt/5.15.2/mingw81_64/include/QtNetwork -IF:/Qt/5.15.2/mingw81_64/include/QtCore -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" Widget.h -o debug\moc_Widget.cpp
@@ -1096,7 +1095,6 @@ debug/Widget.o: Widget.cpp Widget.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
-		RequestPassword.h \
 		ui_Widget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Widget.o Widget.cpp
 

@@ -29,22 +29,24 @@ void Server::newConnection() {
     QByteArray data = socket->readAll();
     QString a;
     a.append(data.constData());
-    if(!a.isEmpty()){
-        debugAndUi(data.constData());
+    if(a.isEmpty()){
+        return;
     }
+
+    debugAndUi(data.constData());
 
     connect(socket, SIGNAL(readyRead()),this, SLOT(slotReadClient()));
 
-    sockets.append(socket);
+    sockets.insert(socket,data.constData());
 
 }
 
 void Server::slotReadClient() {
-    for(QTcpSocket *socket : sockets) {
+    foreach(QTcpSocket * socket, sockets.keys()) {
         QString strData;
         strData.append((socket->readAll()).constData());
         if(strData.isEmpty()){
-            return;
+            continue;
         }
         parsingPacket(strData, socket);
     }

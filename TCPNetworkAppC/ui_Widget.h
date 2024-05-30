@@ -38,6 +38,12 @@ public:
     QPushButton *pushButton_admin;
     QLabel *label_4;
     QPushButton *pushButton_2;
+    QSpacerItem *horizontalSpacer_3;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *verticalSpacer_2;
+    QLineEdit *lineEdit_2;
+    QLabel *label_5;
+    QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_2;
@@ -96,6 +102,32 @@ public:
         pushButton_2->setEnabled(false);
 
         formLayout_2->setWidget(2, QFormLayout::FieldRole, pushButton_2);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        formLayout_2->setItem(3, QFormLayout::FieldRole, horizontalSpacer_3);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        formLayout_2->setItem(5, QFormLayout::LabelRole, verticalSpacer);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        formLayout_2->setItem(5, QFormLayout::FieldRole, verticalSpacer_2);
+
+        lineEdit_2 = new QLineEdit(Widget);
+        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+
+        formLayout_2->setWidget(4, QFormLayout::LabelRole, lineEdit_2);
+
+        label_5 = new QLabel(Widget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        formLayout_2->setWidget(3, QFormLayout::LabelRole, label_5);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        formLayout_2->setItem(4, QFormLayout::FieldRole, horizontalSpacer);
 
 
         horizontalLayout_2->addLayout(formLayout_2);
@@ -157,6 +189,7 @@ public:
         pushButton_admin->setText(QCoreApplication::translate("Widget", "Admin mod", nullptr));
         label_4->setText(QCoreApplication::translate("Widget", "Special abilities:", nullptr));
         pushButton_2->setText(QCoreApplication::translate("Widget", "Start", nullptr));
+        label_5->setText(QCoreApplication::translate("Widget", "Name:", nullptr));
         label_2->setText(QCoreApplication::translate("Widget", "Inter file name:", nullptr));
         pushButton_deleteFile->setText(QCoreApplication::translate("Widget", "Delete file", nullptr));
     } // retranslateUi

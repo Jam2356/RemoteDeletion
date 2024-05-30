@@ -8,7 +8,7 @@ Connection::Connection(QObject *parent)
         QTextStream T(mySocket);
         if(flagIsOnline == false) {
             flagIsOnline = true;
-            mySocket->write("Thanks for my connection :)");
+            mySocket->write("Ivan");
         }
 
         parsingPacket(T.readAll());
