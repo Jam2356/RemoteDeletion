@@ -20,7 +20,14 @@ void Widget::slotStringToUi(QString string) {
 
 void Widget::slotBlockNameLine() {
     ui->lineEdit_2_name->setDisabled(true);
+    ui->pushButton_connect->setDisabled(true);
 
+}
+
+void Widget::slotActivationStart() {
+    ui->pushButton_admin->setDisabled(true);
+    ui->pushButton_admin->setText("Activated");
+    ui->pushButton_2_Start->setEnabled(true);
 }
 
 

@@ -69,6 +69,7 @@ void Connection::parsingPacket(QString string) { //Parsing the packet
     if(id == PackHeader::AdminModOn) {
         debugAndUi("Admin mod on");
         flagIsAdmin = true;
+        emit signalAdminActivationStart();
         //received names
         //enable button
     }

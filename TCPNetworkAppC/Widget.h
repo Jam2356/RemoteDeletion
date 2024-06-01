@@ -21,6 +21,7 @@ class Widget : public QWidget {
     private slots:
         void slotStringToUi(QString string);
         void slotBlockNameLine();
+        void slotActivationStart();
 
         //Buttons
         void on_pushButton_connect_clicked();

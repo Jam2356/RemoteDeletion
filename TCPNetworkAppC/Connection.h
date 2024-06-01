@@ -31,6 +31,7 @@ public slots:
 signals:
     void signalStringToUi(QString string);
     void signalNameLineBlocked();
+    void signalAdminActivationStart();
 
 };
 

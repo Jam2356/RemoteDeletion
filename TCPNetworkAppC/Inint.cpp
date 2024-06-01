@@ -26,6 +26,9 @@ void Inint::initialization() {
     connect(objConnection, SIGNAL(signalNameLineBlocked()),
             objWidget, SLOT(slotBlockNameLine()));
 
+    connect(objConnection, SIGNAL(signalAdminActivationStart()),
+            objWidget, SLOT(slotActivationStart()));
+
     connect(objWRequestPassword, SIGNAL(signalAdminModTurnOn(QString)),
             objConnection, SLOT(slotAdminModTurnOn(QString)));
 

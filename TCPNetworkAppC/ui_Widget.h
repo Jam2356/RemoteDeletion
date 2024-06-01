@@ -37,7 +37,7 @@ public:
     QLabel *label_3;
     QPushButton *pushButton_admin;
     QLabel *label_4;
-    QPushButton *pushButton_2;
+    QPushButton *pushButton_2_Start;
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *verticalSpacer;
     QSpacerItem *verticalSpacer_2;
@@ -97,11 +97,11 @@ public:
 
         formLayout_2->setWidget(2, QFormLayout::LabelRole, label_4);
 
-        pushButton_2 = new QPushButton(Widget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setEnabled(false);
+        pushButton_2_Start = new QPushButton(Widget);
+        pushButton_2_Start->setObjectName(QString::fromUtf8("pushButton_2_Start"));
+        pushButton_2_Start->setEnabled(false);
 
-        formLayout_2->setWidget(2, QFormLayout::FieldRole, pushButton_2);
+        formLayout_2->setWidget(2, QFormLayout::FieldRole, pushButton_2_Start);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -188,7 +188,7 @@ public:
         label_3->setText(QCoreApplication::translate("Widget", "Become at admin:", nullptr));
         pushButton_admin->setText(QCoreApplication::translate("Widget", "Admin mod", nullptr));
         label_4->setText(QCoreApplication::translate("Widget", "Special abilities:", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Widget", "Start", nullptr));
+        pushButton_2_Start->setText(QCoreApplication::translate("Widget", "Start", nullptr));
         label_5->setText(QCoreApplication::translate("Widget", "Name:", nullptr));
         label_2->setText(QCoreApplication::translate("Widget", "Inter file name:", nullptr));
         pushButton_deleteFile->setText(QCoreApplication::translate("Widget", "Delete file", nullptr));

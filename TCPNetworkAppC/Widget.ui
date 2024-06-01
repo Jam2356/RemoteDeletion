@@ -71,7 +71,7 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="pushButton_2_Start">
            <property name="enabled">
             <bool>false</bool>
            </property>

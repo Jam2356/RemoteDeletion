@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Widget_t {
-    QByteArrayData data[13];
-    char stringdata0[216];
+    QByteArrayData data[14];
+    char stringdata0[236];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,15 +42,16 @@ QT_MOC_LITERAL(6, 67, 17), // "signalShowRequest"
 QT_MOC_LITERAL(7, 85, 14), // "slotStringToUi"
 QT_MOC_LITERAL(8, 100, 6), // "string"
 QT_MOC_LITERAL(9, 107, 17), // "slotBlockNameLine"
-QT_MOC_LITERAL(10, 125, 29), // "on_pushButton_connect_clicked"
-QT_MOC_LITERAL(11, 155, 32), // "on_pushButton_deleteFile_clicked"
-QT_MOC_LITERAL(12, 188, 27) // "on_pushButton_admin_clicked"
+QT_MOC_LITERAL(10, 125, 19), // "slotActivationStart"
+QT_MOC_LITERAL(11, 145, 29), // "on_pushButton_connect_clicked"
+QT_MOC_LITERAL(12, 175, 32), // "on_pushButton_deleteFile_clicked"
+QT_MOC_LITERAL(13, 208, 27) // "on_pushButton_admin_clicked"
 
     },
     "Widget\0signalConnectClicked\0\0name\0"
     "signalDeleteFileClicked\0fileName\0"
     "signalShowRequest\0slotStringToUi\0"
-    "string\0slotBlockNameLine\0"
+    "string\0slotBlockNameLine\0slotActivationStart\0"
     "on_pushButton_connect_clicked\0"
     "on_pushButton_deleteFile_clicked\0"
     "on_pushButton_admin_clicked"
@@ -63,7 +64,7 @@ static const uint qt_meta_data_Widget[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -71,16 +72,17 @@ static const uint qt_meta_data_Widget[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   54,    2, 0x06 /* Public */,
-       4,    1,   57,    2, 0x06 /* Public */,
-       6,    0,   60,    2, 0x06 /* Public */,
+       1,    1,   59,    2, 0x06 /* Public */,
+       4,    1,   62,    2, 0x06 /* Public */,
+       6,    0,   65,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       7,    1,   61,    2, 0x08 /* Private */,
-       9,    0,   64,    2, 0x08 /* Private */,
-      10,    0,   65,    2, 0x08 /* Private */,
-      11,    0,   66,    2, 0x08 /* Private */,
-      12,    0,   67,    2, 0x08 /* Private */,
+       7,    1,   66,    2, 0x08 /* Private */,
+       9,    0,   69,    2, 0x08 /* Private */,
+      10,    0,   70,    2, 0x08 /* Private */,
+      11,    0,   71,    2, 0x08 /* Private */,
+      12,    0,   72,    2, 0x08 /* Private */,
+      13,    0,   73,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -89,6 +91,7 @@ static const uint qt_meta_data_Widget[] = {
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    8,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -108,9 +111,10 @@ void Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 2: _t->signalShowRequest(); break;
         case 3: _t->slotStringToUi((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 4: _t->slotBlockNameLine(); break;
-        case 5: _t->on_pushButton_connect_clicked(); break;
-        case 6: _t->on_pushButton_deleteFile_clicked(); break;
-        case 7: _t->on_pushButton_admin_clicked(); break;
+        case 5: _t->slotActivationStart(); break;
+        case 6: _t->on_pushButton_connect_clicked(); break;
+        case 7: _t->on_pushButton_deleteFile_clicked(); break;
+        case 8: _t->on_pushButton_admin_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -168,13 +172,13 @@ int Widget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }
