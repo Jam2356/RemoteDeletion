@@ -17,18 +17,20 @@ private:
     QTcpSocket * mySocket;
     bool flagIsOnline = false;
     bool flagIsAdmin = false;
+    QString myName;
 
     void debugAndUi(QString string);
     void parsingPacket(QString string);
     QString packetToString(QString string);
 
 public slots:
-    void slotConnectClicked();
+    void slotConnectClicked(QString name);
     void slotDeleteFileClicked(QString fileName);
     void slotAdminModTurnOn(QString password);
 
 signals:
     void signalStringToUi(QString string);
+    void signalNameLineBlocked();
 
 };
 

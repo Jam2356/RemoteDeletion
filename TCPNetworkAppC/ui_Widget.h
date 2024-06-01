@@ -41,7 +41,7 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *verticalSpacer;
     QSpacerItem *verticalSpacer_2;
-    QLineEdit *lineEdit_2;
+    QLineEdit *lineEdit_2_name;
     QLabel *label_5;
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout;
@@ -115,10 +115,10 @@ public:
 
         formLayout_2->setItem(5, QFormLayout::FieldRole, verticalSpacer_2);
 
-        lineEdit_2 = new QLineEdit(Widget);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        lineEdit_2_name = new QLineEdit(Widget);
+        lineEdit_2_name->setObjectName(QString::fromUtf8("lineEdit_2_name"));
 
-        formLayout_2->setWidget(4, QFormLayout::LabelRole, lineEdit_2);
+        formLayout_2->setWidget(4, QFormLayout::LabelRole, lineEdit_2_name);
 
         label_5 = new QLabel(Widget);
         label_5->setObjectName(QString::fromUtf8("label_5"));

@@ -18,10 +18,19 @@ void Widget::slotStringToUi(QString string) {
 
 }
 
+void Widget::slotBlockNameLine() {
+    ui->lineEdit_2_name->setDisabled(true);
+
+}
+
 
 //BUTTONS
 void Widget::on_pushButton_connect_clicked() {
-    emit signalConnectClicked();
+    QString name = ui->lineEdit_2_name->text();
+    if(name.isEmpty()) {
+        return;
+    }
+    emit signalConnectClicked(name);
 }
 
 void Widget::on_pushButton_deleteFile_clicked() {

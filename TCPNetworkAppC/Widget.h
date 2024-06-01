@@ -20,6 +20,7 @@ class Widget : public QWidget {
 
     private slots:
         void slotStringToUi(QString string);
+        void slotBlockNameLine();
 
         //Buttons
         void on_pushButton_connect_clicked();
@@ -27,7 +28,7 @@ class Widget : public QWidget {
         void on_pushButton_admin_clicked();
 
     signals:
-        void signalConnectClicked();
+        void signalConnectClicked(QString name);
         void signalDeleteFileClicked(QString fileName);
         void signalShowRequest();
 

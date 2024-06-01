@@ -120,7 +120,7 @@
           </spacer>
          </item>
          <item row="4" column="0">
-          <widget class="QLineEdit" name="lineEdit_2"/>
+          <widget class="QLineEdit" name="lineEdit_2_name"/>
          </item>
          <item row="3" column="0">
           <widget class="QLabel" name="label_5">

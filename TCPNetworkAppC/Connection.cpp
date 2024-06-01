@@ -8,7 +8,8 @@ Connection::Connection(QObject *parent)
         QTextStream T(mySocket);
         if(flagIsOnline == false) {
             flagIsOnline = true;
-            mySocket->write("Ivan");
+            mySocket->write(myName.toStdString().c_str());
+            emit signalNameLineBlocked();
         }
 
         parsingPacket(T.readAll());
@@ -16,7 +17,8 @@ Connection::Connection(QObject *parent)
 
 }
 
-void Connection::slotConnectClicked() {
+void Connection::slotConnectClicked(QString name) {
+    myName = name;
     mySocket->connectToHost("LocalHost", 1234);
 
 }

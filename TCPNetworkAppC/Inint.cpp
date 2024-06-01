@@ -8,8 +8,8 @@ Inint::Inint(QObject *parent)
 }
 
 void Inint::initialization() {
-    connect(objWidget, SIGNAL(signalConnectClicked()),
-            objConnection, SLOT(slotConnectClicked()));
+    connect(objWidget, SIGNAL(signalConnectClicked(QString)),
+            objConnection, SLOT(slotConnectClicked(QString)));
 
     //
     connect(objWidget, SIGNAL(signalShowRequest()),
@@ -22,6 +22,9 @@ void Inint::initialization() {
 
     connect(objConnection, SIGNAL(signalStringToUi(QString)),
             objWidget, SLOT(slotStringToUi(QString)));
+
+    connect(objConnection, SIGNAL(signalNameLineBlocked()),
+            objWidget, SLOT(slotBlockNameLine()));
 
     connect(objWRequestPassword, SIGNAL(signalAdminModTurnOn(QString)),
             objConnection, SLOT(slotAdminModTurnOn(QString)));
