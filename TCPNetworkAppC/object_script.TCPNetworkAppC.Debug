@@ -1,0 +1,11 @@
+debug/Connection.o
+debug/Inint.o
+debug/RequestPassword.o
+debug/SuperAbility.o
+debug/main.o
+debug/Widget.o
+debug/moc_Connection.o
+debug/moc_Inint.o
+debug/moc_RequestPassword.o
+debug/moc_SuperAbility.o
+debug/moc_Widget.o

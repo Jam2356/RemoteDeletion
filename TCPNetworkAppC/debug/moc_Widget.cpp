@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Widget_t {
-    QByteArrayData data[14];
-    char stringdata0[236];
+    QByteArrayData data[16];
+    char stringdata0[290];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,22 +39,25 @@ QT_MOC_LITERAL(3, 29, 4), // "name"
 QT_MOC_LITERAL(4, 34, 23), // "signalDeleteFileClicked"
 QT_MOC_LITERAL(5, 58, 8), // "fileName"
 QT_MOC_LITERAL(6, 67, 17), // "signalShowRequest"
-QT_MOC_LITERAL(7, 85, 14), // "slotStringToUi"
-QT_MOC_LITERAL(8, 100, 6), // "string"
-QT_MOC_LITERAL(9, 107, 17), // "slotBlockNameLine"
-QT_MOC_LITERAL(10, 125, 19), // "slotActivationStart"
-QT_MOC_LITERAL(11, 145, 29), // "on_pushButton_connect_clicked"
-QT_MOC_LITERAL(12, 175, 32), // "on_pushButton_deleteFile_clicked"
-QT_MOC_LITERAL(13, 208, 27) // "on_pushButton_admin_clicked"
+QT_MOC_LITERAL(7, 85, 23), // "signalStartSuperAbility"
+QT_MOC_LITERAL(8, 109, 14), // "slotStringToUi"
+QT_MOC_LITERAL(9, 124, 6), // "string"
+QT_MOC_LITERAL(10, 131, 17), // "slotBlockNameLine"
+QT_MOC_LITERAL(11, 149, 19), // "slotActivationStart"
+QT_MOC_LITERAL(12, 169, 29), // "on_pushButton_connect_clicked"
+QT_MOC_LITERAL(13, 199, 32), // "on_pushButton_deleteFile_clicked"
+QT_MOC_LITERAL(14, 232, 27), // "on_pushButton_admin_clicked"
+QT_MOC_LITERAL(15, 260, 29) // "on_pushButton_2_Start_clicked"
 
     },
     "Widget\0signalConnectClicked\0\0name\0"
     "signalDeleteFileClicked\0fileName\0"
-    "signalShowRequest\0slotStringToUi\0"
-    "string\0slotBlockNameLine\0slotActivationStart\0"
-    "on_pushButton_connect_clicked\0"
+    "signalShowRequest\0signalStartSuperAbility\0"
+    "slotStringToUi\0string\0slotBlockNameLine\0"
+    "slotActivationStart\0on_pushButton_connect_clicked\0"
     "on_pushButton_deleteFile_clicked\0"
-    "on_pushButton_admin_clicked"
+    "on_pushButton_admin_clicked\0"
+    "on_pushButton_2_Start_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,33 +67,37 @@ static const uint qt_meta_data_Widget[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       3,       // signalCount
+       4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   59,    2, 0x06 /* Public */,
-       4,    1,   62,    2, 0x06 /* Public */,
-       6,    0,   65,    2, 0x06 /* Public */,
+       1,    1,   69,    2, 0x06 /* Public */,
+       4,    1,   72,    2, 0x06 /* Public */,
+       6,    0,   75,    2, 0x06 /* Public */,
+       7,    0,   76,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       7,    1,   66,    2, 0x08 /* Private */,
-       9,    0,   69,    2, 0x08 /* Private */,
-      10,    0,   70,    2, 0x08 /* Private */,
-      11,    0,   71,    2, 0x08 /* Private */,
-      12,    0,   72,    2, 0x08 /* Private */,
-      13,    0,   73,    2, 0x08 /* Private */,
+       8,    1,   77,    2, 0x08 /* Private */,
+      10,    0,   80,    2, 0x08 /* Private */,
+      11,    0,   81,    2, 0x08 /* Private */,
+      12,    0,   82,    2, 0x08 /* Private */,
+      13,    0,   83,    2, 0x08 /* Private */,
+      14,    0,   84,    2, 0x08 /* Private */,
+      15,    0,   85,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void,
+    QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QString,    8,
+    QMetaType::Void, QMetaType::QString,    9,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -109,12 +116,14 @@ void Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 0: _t->signalConnectClicked((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->signalDeleteFileClicked((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 2: _t->signalShowRequest(); break;
-        case 3: _t->slotStringToUi((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 4: _t->slotBlockNameLine(); break;
-        case 5: _t->slotActivationStart(); break;
-        case 6: _t->on_pushButton_connect_clicked(); break;
-        case 7: _t->on_pushButton_deleteFile_clicked(); break;
-        case 8: _t->on_pushButton_admin_clicked(); break;
+        case 3: _t->signalStartSuperAbility(); break;
+        case 4: _t->slotStringToUi((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 5: _t->slotBlockNameLine(); break;
+        case 6: _t->slotActivationStart(); break;
+        case 7: _t->on_pushButton_connect_clicked(); break;
+        case 8: _t->on_pushButton_deleteFile_clicked(); break;
+        case 9: _t->on_pushButton_admin_clicked(); break;
+        case 10: _t->on_pushButton_2_Start_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -137,6 +146,13 @@ void Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
             using _t = void (Widget::*)();
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Widget::signalShowRequest)) {
                 *result = 2;
+                return;
+            }
+        }
+        {
+            using _t = void (Widget::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Widget::signalStartSuperAbility)) {
+                *result = 3;
                 return;
             }
         }
@@ -172,13 +188,13 @@ int Widget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 11;
     }
     return _id;
 }
@@ -201,6 +217,12 @@ void Widget::signalDeleteFileClicked(QString _t1)
 void Widget::signalShowRequest()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
+}
+
+// SIGNAL 3
+void Widget::signalStartSuperAbility()
+{
+    QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

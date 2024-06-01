@@ -13,6 +13,7 @@ SOURCES += \
     Connection.cpp \
     Inint.cpp \
     RequestPassword.cpp \
+    SuperAbility.cpp \
     main.cpp \
     Widget.cpp
 
@@ -21,10 +22,12 @@ HEADERS += \
     EnumPackHeader.h \
     Inint.h \
     RequestPassword.h \
+    SuperAbility.h \
     Widget.h
 
 FORMS += \
     RequestPassword.ui \
+    SuperAbility.ui \
     Widget.ui
 
 # Default rules for deployment.

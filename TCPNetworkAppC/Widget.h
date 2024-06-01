@@ -28,10 +28,13 @@ class Widget : public QWidget {
         void on_pushButton_deleteFile_clicked();
         void on_pushButton_admin_clicked();
 
+        void on_pushButton_2_Start_clicked();
+
     signals:
         void signalConnectClicked(QString name);
         void signalDeleteFileClicked(QString fileName);
         void signalShowRequest();
+        void signalStartSuperAbility();
 
 
 };

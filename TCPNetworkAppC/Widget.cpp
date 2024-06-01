@@ -28,6 +28,7 @@ void Widget::slotActivationStart() {
     ui->pushButton_admin->setDisabled(true);
     ui->pushButton_admin->setText("Activated");
     ui->pushButton_2_Start->setEnabled(true);
+
 }
 
 
@@ -47,6 +48,11 @@ void Widget::on_pushButton_deleteFile_clicked() {
 
 void Widget::on_pushButton_admin_clicked() {
     emit signalShowRequest();
+
+}
+
+void Widget::on_pushButton_2_Start_clicked() {
+    emit signalStartSuperAbility();
 
 }
 
