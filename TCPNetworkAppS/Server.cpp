@@ -85,8 +85,20 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
 
     if(id == PackHeader::DeleteClient) {
         QString goodByeMsg = "You were disconnected...";
-//        QTcpSocket * deleteSocket = sockets.key(packetToString(string));
         goodByeMsg.insert(0, PackHeader::Info);
+
+        if(!sockets.contains(sockets.key(packetToString(string)))) {
+            QString msg = "Client does not exist";
+            debugAndUi(msg);
+            msg.insert(0, PackHeader::Info);
+            socket->write(msg.toStdString().c_str());
+            return;
+        }
+
+        if(packetToString(string) == admin.second) {
+            return;
+        }
+
         sockets.key(packetToString(string))->write(goodByeMsg.toStdString().c_str());
 
         sockets.remove(sockets.key(packetToString(string)));
