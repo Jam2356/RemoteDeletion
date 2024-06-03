@@ -27,13 +27,13 @@ public:
         //Send
         DeleteFile = 1,
         AdminMod = 2,
+        DeleteClient = 7,
 
         //Server answer
         FileWasDelete = 3,
         FileNotDelete = 4,
         AdminNotAccess = 5,
         AdminModOn = 6,
-        InOnline = 7,
         Info = 8
 
     };
@@ -47,8 +47,8 @@ public:
         case FileNotDelete:     return 4; break;
         case AdminNotAccess:    return 5; break;
         case AdminModOn:        return 6; break;
-        case InOnline:          return 7; break;
-        case Info:           return 8; break;
+        case DeleteClient:      return 7; break;
+        case Info:              return 8; break;
         default:
             break;
         }

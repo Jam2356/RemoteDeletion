@@ -63,7 +63,6 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
     QString idFrom = string;
     PackHeader id = (idFrom.remove(1, idFrom.length())).at(0).unicode();
 
-    QString a = "123";
     QString path = "ServerFolder/";
     qDebug() << "\n Rec pack: " << id;
 
@@ -71,13 +70,27 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
     if(id == PackHeader::DeleteFile) {
         qDebug() << " DeleteFile";
         debugAndUi(packetToString(string));
+
+        QString msg = " ";
+
         if(!deleteFile(path+packetToString(string))) {
-            a.insert(0, PackHeader::FileNotDelete);
-            socket->write(a.toStdString().c_str());
+            msg.insert(0, PackHeader::FileNotDelete);
+            socket->write(msg.toStdString().c_str());
             return;
         }
-        a.insert(0, PackHeader::FileWasDelete);
-        socket->write(a.toStdString().c_str());
+
+        msg.insert(0, PackHeader::FileWasDelete);
+        socket->write(msg.toStdString().c_str());
+    }
+
+    if(id == PackHeader::DeleteClient) {
+        QString goodByeMsg = "You were disconnected...";
+//        QTcpSocket * deleteSocket = sockets.key(packetToString(string));
+        goodByeMsg.insert(0, PackHeader::Info);
+        sockets.key(packetToString(string))->write(goodByeMsg.toStdString().c_str());
+
+        sockets.remove(sockets.key(packetToString(string)));
+
     }
 
     if(id == PackHeader::AdminMod) {
@@ -93,7 +106,7 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
         debugAndUi("AdminMod request");
 
         if(packetToString(string) != password) {
-            QString msg = "Received password incorrect";
+            QString msg = "Password incorrect";
             debugAndUi("Received password incorrect");
             msg.insert(0, PackHeader::AdminNotAccess);
             socket->write(msg.toStdString().c_str());

@@ -13,3 +13,11 @@ SuperAbility::~SuperAbility() {
 
 }
 
+void SuperAbility::on_pushButton_kick_clicked() {
+    QString nameOfKick = uiSuperAbility->lineEdit_kick->text();
+    if(nameOfKick.isEmpty()) {
+        return;
+    }
+    emit signalNameToKick(nameOfKick);
+}
+

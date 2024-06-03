@@ -38,6 +38,12 @@ void Connection::slotAdminModTurnOn(QString password) {
 
 }
 
+void Connection::slotNameToKickSend(QString nameKick) {
+    nameKick.insert(0, QString(PackHeader::DeleteClient));
+    mySocket->write(nameKick.toStdString().c_str());
+
+}
+
 void Connection::debugAndUi(QString string) { //Prepare the packet to Ui
     emit signalStringToUi(string);
     qDebug() << string;
@@ -53,10 +59,6 @@ void Connection::parsingPacket(QString string) { //Parsing the packet
     PackHeader id = (idFrom.remove(1, idFrom.length())).at(0).unicode();
 
     qDebug() << "\n Rec pack: " << id;
-
-    if(id == PackHeader::InOnline) {
-        debugAndUi("In online");
-    }
 
     if(id == PackHeader::FileWasDelete) {
         debugAndUi("File was delete");
@@ -76,8 +78,7 @@ void Connection::parsingPacket(QString string) { //Parsing the packet
 
         debugAndUi(packetToString(string));
         emit signalAdminActivationStart();
-        //received names
-        //enable button
+
     }
 
     if(id == PackHeader::AdminNotAccess) {

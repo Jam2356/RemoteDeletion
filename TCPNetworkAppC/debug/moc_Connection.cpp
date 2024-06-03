@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Connection_t {
-    QByteArrayData data[12];
-    char stringdata0[168];
+    QByteArrayData data[14];
+    char stringdata0[196];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,13 +43,16 @@ QT_MOC_LITERAL(7, 104, 4), // "name"
 QT_MOC_LITERAL(8, 109, 21), // "slotDeleteFileClicked"
 QT_MOC_LITERAL(9, 131, 8), // "fileName"
 QT_MOC_LITERAL(10, 140, 18), // "slotAdminModTurnOn"
-QT_MOC_LITERAL(11, 159, 8) // "password"
+QT_MOC_LITERAL(11, 159, 8), // "password"
+QT_MOC_LITERAL(12, 168, 18), // "slotNameToKickSend"
+QT_MOC_LITERAL(13, 187, 8) // "nameKick"
 
     },
     "Connection\0signalStringToUi\0\0string\0"
     "signalNameLineBlocked\0signalAdminActivationStart\0"
     "slotConnectClicked\0name\0slotDeleteFileClicked\0"
-    "fileName\0slotAdminModTurnOn\0password"
+    "fileName\0slotAdminModTurnOn\0password\0"
+    "slotNameToKickSend\0nameKick"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,7 +62,7 @@ static const uint qt_meta_data_Connection[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,14 +70,15 @@ static const uint qt_meta_data_Connection[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   44,    2, 0x06 /* Public */,
-       4,    0,   47,    2, 0x06 /* Public */,
-       5,    0,   48,    2, 0x06 /* Public */,
+       1,    1,   49,    2, 0x06 /* Public */,
+       4,    0,   52,    2, 0x06 /* Public */,
+       5,    0,   53,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    1,   49,    2, 0x0a /* Public */,
-       8,    1,   52,    2, 0x0a /* Public */,
-      10,    1,   55,    2, 0x0a /* Public */,
+       6,    1,   54,    2, 0x0a /* Public */,
+       8,    1,   57,    2, 0x0a /* Public */,
+      10,    1,   60,    2, 0x0a /* Public */,
+      12,    1,   63,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -85,6 +89,7 @@ static const uint qt_meta_data_Connection[] = {
     QMetaType::Void, QMetaType::QString,    7,
     QMetaType::Void, QMetaType::QString,    9,
     QMetaType::Void, QMetaType::QString,   11,
+    QMetaType::Void, QMetaType::QString,   13,
 
        0        // eod
 };
@@ -101,6 +106,7 @@ void Connection::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->slotConnectClicked((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 4: _t->slotDeleteFileClicked((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 5: _t->slotAdminModTurnOn((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 6: _t->slotNameToKickSend((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -158,13 +164,13 @@ int Connection::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

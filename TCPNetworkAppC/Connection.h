@@ -27,6 +27,7 @@ public slots:
     void slotConnectClicked(QString name);
     void slotDeleteFileClicked(QString fileName);
     void slotAdminModTurnOn(QString password);
+    void slotNameToKickSend(QString nameKick);
 
 signals:
     void signalStringToUi(QString string);

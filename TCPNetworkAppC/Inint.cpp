@@ -36,4 +36,7 @@ void Inint::initialization() {
     connect(objWRequestPassword, SIGNAL(signalAdminModTurnOn(QString)),
             objConnection, SLOT(slotAdminModTurnOn(QString)));
 
+    connect(objSuperAbility, SIGNAL(signalNameToKick(QString)),
+            objConnection, SLOT(slotNameToKickSend(QString)));
+
 }
