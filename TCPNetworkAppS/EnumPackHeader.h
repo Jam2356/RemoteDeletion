@@ -48,7 +48,7 @@ public:
         case AdminNotAccess:    return 5; break;
         case AdminModOn:        return 6; break;
         case InOnline:          return 7; break;
-        case Info:           return 8; break;
+        case Info:              return 8; break;
         default:
             break;
         }

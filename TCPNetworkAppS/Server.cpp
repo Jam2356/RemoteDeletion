@@ -81,23 +81,45 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
     }
 
     if(id == PackHeader::AdminMod) {
-        //Checking
-        //...
-        //Password
-        //Send list users
+
+        //blocking to all C`s function - AdminMod, if admin exists
+        if(flagAdminExists) {
+            QString msg = "Admin already exists! It`s " + admin.second;
+            msg.insert(0, PackHeader::AdminNotAccess);
+            socket->write(msg.toStdString().c_str());
+            return;
+        }
+
         debugAndUi("AdminMod request");
+
         if(packetToString(string) != password) {
+            QString msg = "Received password incorrect";
             debugAndUi("Received password incorrect");
-            a.insert(0, PackHeader::AdminNotAccess);
-            socket->write(a.toStdString().c_str());
+            msg.insert(0, PackHeader::AdminNotAccess);
+            socket->write(msg.toStdString().c_str());
             return;
         }
 
         debugAndUi("Received password correct");
-        //blocking to all function AdminMod
+
+        flagAdminExists = true;
+        admin.first = socket;                   //Remember admin socket
+        admin.second = sockets.value(socket);   //Remember admin name
+
         //send names
-        a.insert(0, PackHeader::AdminModOn);
-        socket->write(a.toStdString().c_str());
+        QString fullNamesString = "Users: ";
+        fullNamesString.insert(0, PackHeader::AdminModOn);
+
+        foreach(QTcpSocket * thisSocket, sockets.keys()) {
+            if(thisSocket == socket) {
+                continue;
+            }
+
+            fullNamesString.append(sockets.value(thisSocket)+" ");
+        }
+
+        socket->write(fullNamesString.toStdString().c_str());
+
     }
 
 }

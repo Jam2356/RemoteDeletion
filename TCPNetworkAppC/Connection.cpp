@@ -67,8 +67,14 @@ void Connection::parsingPacket(QString string) { //Parsing the packet
     }
 
     if(id == PackHeader::AdminModOn) {
-        debugAndUi("Admin mod on");
-        flagIsAdmin = true;
+
+        if(flagIsAdmin) {
+            flagIsAdmin = true;
+            debugAndUi("Admin mod on");
+
+        }
+
+        debugAndUi(packetToString(string));
         emit signalAdminActivationStart();
         //received names
         //enable button
@@ -76,6 +82,7 @@ void Connection::parsingPacket(QString string) { //Parsing the packet
 
     if(id == PackHeader::AdminNotAccess) {
         debugAndUi("Admin not access");
+        debugAndUi(packetToString(string));
     }
 
     if(id == PackHeader::Info) {

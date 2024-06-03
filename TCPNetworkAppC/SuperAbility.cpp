@@ -3,12 +3,13 @@
 
 SuperAbility::SuperAbility(QWidget *parent) :
     QWidget(parent),
-    uiSuperAbility(new Ui::SuperAbility)
-{
+    uiSuperAbility(new Ui::SuperAbility) {
     uiSuperAbility->setupUi(this);
+
 }
 
-SuperAbility::~SuperAbility()
-{
+SuperAbility::~SuperAbility() {
     delete uiSuperAbility;
+
 }
+

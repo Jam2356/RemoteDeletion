@@ -19,9 +19,10 @@ public:
 
 private:
     QTcpServer * server;
-//    QList<QTcpSocket *> sockets;
     QMap<QTcpSocket *,QString> sockets;
     QString password = "pass";
+    QPair<QTcpSocket *,QString> admin;
+    bool flagAdminExists = false;
 
     void debugAndUi(QString string);
     void parsingPacket(QString string, QTcpSocket * socket);
