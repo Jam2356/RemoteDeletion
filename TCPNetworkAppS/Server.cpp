@@ -19,17 +19,28 @@ void Server::startListen() {
 void Server::newConnection() {
     QTcpSocket * socket = server->nextPendingConnection();
 
-    if (!socket)
+    if(!socket) {
         return;
+    }
+
+    if(sockets.size() > 2) {
+
+        QString msg = "Maximum number of clients";
+        debugAndUi(msg);
+        msg.insert(0, PackHeader::Info);
+        socket->write(msg.toStdString().c_str());
+        return;
+    }
 
     debugAndUi("Client connected");
     sendInfoString("Hello, you are connected!", socket);
 
     socket->waitForReadyRead();
     QByteArray data = socket->readAll();
-    QString a;
-    a.append(data.constData());
-    if(a.isEmpty()){
+    QString stringData;
+    stringData.append(data.constData());
+
+    if(stringData.isEmpty()){
         return;
     }
 
@@ -84,12 +95,10 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
     }
 
     if(id == PackHeader::DeleteClient) {
-        QString goodByeMsg = "You were disconnected...";
-        goodByeMsg.insert(0, PackHeader::Info);
 
         if(!sockets.contains(sockets.key(packetToString(string)))) {
             QString msg = "Client does not exist";
-            debugAndUi(msg);
+            debugAndUi("Client " + packetToString(string) + " does not exist");
             msg.insert(0, PackHeader::Info);
             socket->write(msg.toStdString().c_str());
             return;
@@ -99,7 +108,20 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
             return;
         }
 
+
+        QString goodByeMsg = "You were disconnected...";
+        goodByeMsg.insert(0, PackHeader::Info);
+
         sockets.key(packetToString(string))->write(goodByeMsg.toStdString().c_str());
+
+
+        QString msgForAdmin = "Client " + packetToString(string) + " were disconnected";
+        msgForAdmin.insert(0, PackHeader::Info);
+
+        admin.first->write(msgForAdmin.toStdString().c_str());
+
+
+        debugAndUi("Client " + packetToString(string) + " were disconnected");
 
         sockets.remove(sockets.key(packetToString(string)));
 
@@ -132,7 +154,7 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
         admin.second = sockets.value(socket);   //Remember admin name
 
         //send names
-        QString fullNamesString = "Users: ";
+        QString fullNamesString = "Clients: ";
         fullNamesString.insert(0, PackHeader::AdminModOn);
 
         foreach(QTcpSocket * thisSocket, sockets.keys()) {
