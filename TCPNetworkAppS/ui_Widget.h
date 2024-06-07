@@ -12,7 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,6 +25,10 @@ class Ui_Widget
 {
 public:
     QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label_serverLive;
+    QSpacerItem *horizontalSpacer;
     QTextBrowser *textBrowser;
 
     void setupUi(QWidget *Widget)
@@ -30,10 +38,29 @@ public:
         Widget->resize(505, 353);
         gridLayout = new QGridLayout(Widget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        label_serverLive = new QLabel(Widget);
+        label_serverLive->setObjectName(QString::fromUtf8("label_serverLive"));
+
+        horizontalLayout->addWidget(label_serverLive);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
         textBrowser = new QTextBrowser(Widget);
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
 
-        gridLayout->addWidget(textBrowser, 0, 0, 1, 1);
+        verticalLayout->addWidget(textBrowser);
+
+
+        gridLayout->addLayout(verticalLayout, 0, 0, 1, 1);
 
 
         retranslateUi(Widget);
@@ -44,6 +71,7 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Form", nullptr));
+        label_serverLive->setText(QCoreApplication::translate("Widget", "Server live:", nullptr));
     } // retranslateUi
 
 };

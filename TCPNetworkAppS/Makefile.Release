@@ -239,6 +239,9 @@ release/moc_Init.cpp: Init.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QFile \
 		EnumPackHeader.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		release/moc_predefs.h \
 		../../../Qt/5.15.2/mingw81_64/bin/moc.exe
 	F:\Qt\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include F:/GIT/RemoteDeletion/TCPNetworkAppS/release/moc_predefs.h -IF:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++ -IF:/GIT/RemoteDeletion/TCPNetworkAppS -IF:/Qt/5.15.2/mingw81_64/include -IF:/Qt/5.15.2/mingw81_64/include/QtWidgets -IF:/Qt/5.15.2/mingw81_64/include/QtGui -IF:/Qt/5.15.2/mingw81_64/include/QtANGLE -IF:/Qt/5.15.2/mingw81_64/include/QtNetwork -IF:/Qt/5.15.2/mingw81_64/include/QtCore -IF:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IF:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IF:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IF:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IF:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IF:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include Init.h -o release\moc_Init.cpp
@@ -322,6 +325,9 @@ release/moc_Server.cpp: Server.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
 		EnumPackHeader.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		release/moc_predefs.h \
 		../../../Qt/5.15.2/mingw81_64/bin/moc.exe
 	F:\Qt\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include F:/GIT/RemoteDeletion/TCPNetworkAppS/release/moc_predefs.h -IF:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++ -IF:/GIT/RemoteDeletion/TCPNetworkAppS -IF:/Qt/5.15.2/mingw81_64/include -IF:/Qt/5.15.2/mingw81_64/include/QtWidgets -IF:/Qt/5.15.2/mingw81_64/include/QtGui -IF:/Qt/5.15.2/mingw81_64/include/QtANGLE -IF:/Qt/5.15.2/mingw81_64/include/QtNetwork -IF:/Qt/5.15.2/mingw81_64/include/QtCore -IF:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IF:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IF:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IF:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IF:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IF:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include Server.h -o release\moc_Server.cpp
@@ -574,7 +580,10 @@ release/Init.o: Init.cpp Init.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtNetwork/qtcpsocket.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QFile \
 		EnumPackHeader.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Init.o Init.cpp
 
 release/Server.o: Server.cpp Server.h \
@@ -655,7 +664,10 @@ release/Server.o: Server.cpp Server.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
 		EnumPackHeader.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Server.o Server.cpp
 
 release/Widget.o: Widget.cpp Widget.h \
@@ -762,30 +774,7 @@ release/Widget.o: Widget.cpp Widget.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
-		ui_Widget.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/QGridLayout \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/QTextBrowser \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/qtextedit.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtGui/qtextdocument.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtGui/qtextcursor.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtGui/qtextformat.h \
-		../../../Qt/5.15.2/mingw81_64/include/QtGui/qpen.h
+		ui_Widget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Widget.o Widget.cpp
 
 release/main.o: main.cpp Init.h \
@@ -906,6 +895,9 @@ release/main.o: main.cpp Init.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QFile \
 		EnumPackHeader.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		../../../Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
 		../../../Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
 		../../../Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \

@@ -46,6 +46,7 @@ public slots:
 
 signals:
     void signalStringToUi(QString string);
+    void signalUpdateServerLiveUi(int time);
 
 };
 

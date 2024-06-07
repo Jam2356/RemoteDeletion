@@ -19,6 +19,7 @@ public:
 
 private slots:
     void slotStringToUi(QString string);
+    void slotUpdateServerLive(int time);
 
 };
 

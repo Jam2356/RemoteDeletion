@@ -13,4 +13,7 @@ void Init::init() {
     connect(server, SIGNAL(signalStringToUi(QString)),
             ui, SLOT(slotStringToUi(QString)));
 
+    connect(server, SIGNAL(signalUpdateServerLiveUi(int)),
+            ui, SLOT(slotUpdateServerLive(int)));
+
 }
