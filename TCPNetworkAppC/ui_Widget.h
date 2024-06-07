@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -28,22 +27,28 @@ class Ui_Widget
 {
 public:
     QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_4;
+    QHBoxLayout *horizontalLayout_8;
+    QTextBrowser *textBrowser;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_2;
-    QTextBrowser *textBrowser;
-    QFormLayout *formLayout_2;
     QLabel *label;
     QPushButton *pushButton_connect;
+    QHBoxLayout *horizontalLayout_3;
     QLabel *label_3;
     QPushButton *pushButton_admin;
+    QHBoxLayout *horizontalLayout_4;
     QLabel *label_4;
     QPushButton *pushButton_2_Start;
-    QSpacerItem *horizontalSpacer_3;
-    QSpacerItem *verticalSpacer;
-    QSpacerItem *verticalSpacer_2;
-    QLineEdit *lineEdit_2_name;
+    QHBoxLayout *horizontalLayout_5;
     QLabel *label_5;
+    QSpacerItem *horizontalSpacer_3;
+    QHBoxLayout *horizontalLayout_6;
+    QLineEdit *lineEdit_2_name;
     QSpacerItem *horizontalSpacer;
+    QHBoxLayout *horizontalLayout_7;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *horizontalSpacer_4;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_2;
@@ -56,84 +61,119 @@ public:
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(470, 360);
-        Widget->setMinimumSize(QSize(470, 360));
-        Widget->setMaximumSize(QSize(470, 470));
+        Widget->resize(770, 360);
+        Widget->setMinimumSize(QSize(770, 360));
+        Widget->setMaximumSize(QSize(770, 470));
         gridLayout = new QGridLayout(Widget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        textBrowser = new QTextBrowser(Widget);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        textBrowser->setMinimumSize(QSize(500, 200));
+
+        horizontalLayout_8->addWidget(textBrowser);
+
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        textBrowser = new QTextBrowser(Widget);
-        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-
-        horizontalLayout_2->addWidget(textBrowser);
-
-        formLayout_2 = new QFormLayout();
-        formLayout_2->setObjectName(QString::fromUtf8("formLayout_2"));
         label = new QLabel(Widget);
         label->setObjectName(QString::fromUtf8("label"));
 
-        formLayout_2->setWidget(0, QFormLayout::LabelRole, label);
+        horizontalLayout_2->addWidget(label);
 
         pushButton_connect = new QPushButton(Widget);
         pushButton_connect->setObjectName(QString::fromUtf8("pushButton_connect"));
+        pushButton_connect->setMaximumSize(QSize(100, 24));
 
-        formLayout_2->setWidget(0, QFormLayout::FieldRole, pushButton_connect);
+        horizontalLayout_2->addWidget(pushButton_connect);
 
+
+        verticalLayout_3->addLayout(horizontalLayout_2);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         label_3 = new QLabel(Widget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        formLayout_2->setWidget(1, QFormLayout::LabelRole, label_3);
+        horizontalLayout_3->addWidget(label_3);
 
         pushButton_admin = new QPushButton(Widget);
         pushButton_admin->setObjectName(QString::fromUtf8("pushButton_admin"));
+        pushButton_admin->setEnabled(false);
+        pushButton_admin->setMaximumSize(QSize(100, 24));
 
-        formLayout_2->setWidget(1, QFormLayout::FieldRole, pushButton_admin);
+        horizontalLayout_3->addWidget(pushButton_admin);
 
+
+        verticalLayout_3->addLayout(horizontalLayout_3);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         label_4 = new QLabel(Widget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
-        formLayout_2->setWidget(2, QFormLayout::LabelRole, label_4);
+        horizontalLayout_4->addWidget(label_4);
 
         pushButton_2_Start = new QPushButton(Widget);
         pushButton_2_Start->setObjectName(QString::fromUtf8("pushButton_2_Start"));
         pushButton_2_Start->setEnabled(false);
+        pushButton_2_Start->setMaximumSize(QSize(100, 24));
 
-        formLayout_2->setWidget(2, QFormLayout::FieldRole, pushButton_2_Start);
+        horizontalLayout_4->addWidget(pushButton_2_Start);
 
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        formLayout_2->setItem(3, QFormLayout::FieldRole, horizontalSpacer_3);
+        verticalLayout_3->addLayout(horizontalLayout_4);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout_2->setItem(5, QFormLayout::LabelRole, verticalSpacer);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout_2->setItem(5, QFormLayout::FieldRole, verticalSpacer_2);
-
-        lineEdit_2_name = new QLineEdit(Widget);
-        lineEdit_2_name->setObjectName(QString::fromUtf8("lineEdit_2_name"));
-
-        formLayout_2->setWidget(4, QFormLayout::LabelRole, lineEdit_2_name);
-
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         label_5 = new QLabel(Widget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
 
-        formLayout_2->setWidget(3, QFormLayout::LabelRole, label_5);
+        horizontalLayout_5->addWidget(label_5);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_3 = new QSpacerItem(100, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-        formLayout_2->setItem(4, QFormLayout::FieldRole, horizontalSpacer);
-
-
-        horizontalLayout_2->addLayout(formLayout_2);
+        horizontalLayout_5->addItem(horizontalSpacer_3);
 
 
-        verticalLayout_3->addLayout(horizontalLayout_2);
+        verticalLayout_3->addLayout(horizontalLayout_5);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        lineEdit_2_name = new QLineEdit(Widget);
+        lineEdit_2_name->setObjectName(QString::fromUtf8("lineEdit_2_name"));
+
+        horizontalLayout_6->addWidget(lineEdit_2_name);
+
+        horizontalSpacer = new QSpacerItem(100, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_6);
+
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        horizontalLayout_7->addItem(verticalSpacer);
+
+        horizontalSpacer_4 = new QSpacerItem(100, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_7->addItem(horizontalSpacer_4);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_7);
+
+
+        horizontalLayout_8->addLayout(verticalLayout_3);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_8);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -155,7 +195,7 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        horizontalSpacer_2 = new QSpacerItem(88, 18, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_2 = new QSpacerItem(100, 18, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
         verticalLayout->addItem(horizontalSpacer_2);
 
@@ -169,10 +209,10 @@ public:
         horizontalLayout->addLayout(verticalLayout);
 
 
-        verticalLayout_3->addLayout(horizontalLayout);
+        verticalLayout_4->addLayout(horizontalLayout);
 
 
-        gridLayout->addLayout(verticalLayout_3, 0, 0, 1, 1);
+        gridLayout->addLayout(verticalLayout_4, 0, 0, 1, 1);
 
 
         retranslateUi(Widget);

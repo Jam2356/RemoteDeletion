@@ -21,6 +21,7 @@ void Widget::slotStringToUi(QString string) {
 void Widget::slotBlockNameLine() {
     ui->lineEdit_2_name->setDisabled(true);
     ui->pushButton_connect->setDisabled(true);
+    ui->pushButton_admin->setEnabled(true);
 
 }
 
