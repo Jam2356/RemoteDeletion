@@ -20,13 +20,17 @@ public:
 
 private:
     QTcpServer * server;
-    QMap<QTcpSocket *,QString> sockets;
+    QMap<QTcpSocket *, QString> sockets;
     QString password = "pass";
-    QPair<QTcpSocket *,QString> admin;
+    QPair<QTcpSocket *, QString> admin;
+
+    QMap<QTcpSocket *, int> timeWorkClients;
     QTimer * timer = new QTimer(this);
     int timeWork = 0;
     QString serverTimerWork;
+
     bool flagAdminExists = false;
+
 
     void debugAndUi(QString string);
     void parsingPacket(QString string, QTcpSocket * socket);

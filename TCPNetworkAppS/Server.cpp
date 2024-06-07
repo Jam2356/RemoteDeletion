@@ -50,7 +50,8 @@ void Server::newConnection() {
 
     connect(socket, SIGNAL(readyRead()),this, SLOT(slotReadClient()));
 
-    sockets.insert(socket,data.constData());
+    sockets.insert(socket, data.constData());
+    timeWorkClients.insert(socket, timeWork);
 
 }
 
@@ -124,13 +125,14 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
         sockets.key(packetToString(string))->write(goodByeMsg.toStdString().c_str());
 
 
-        QString msgForAdmin = "Client " + packetToString(string) + " were disconnected ";
+        QString msgForAdmin = "Client " + packetToString(string) + " were disconnected, " +
+                              "session time: " + QString::number(timeWork-timeWorkClients.value(sockets.key(packetToString(string)))) + " s";
+
         msgForAdmin.insert(0, PackHeader::Info);
 
         admin.first->write(msgForAdmin.toStdString().c_str());
 
-
-        debugAndUi("Client " + packetToString(string) + " were disconnected");
+        debugAndUi(msgForAdmin);
 
         sockets.remove(sockets.key(packetToString(string)));
 
@@ -146,7 +148,7 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
             return;
         }
 
-        debugAndUi("AdminMod request");
+        debugAndUi(packetToString(string) + ": AdminMod request" + serverTimerWork);
 
         if(packetToString(string) != password) {
             QString msg = "Password incorrect";
