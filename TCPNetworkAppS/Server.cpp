@@ -3,8 +3,11 @@
 Server::Server(QObject *parent)
     : QObject{parent} {
     server = new QTcpServer(this);
+    timer = new QTimer(this);
+    timer->start(1000);
 
     connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
+    connect(timer, SIGNAL(timeout()),this, SLOT(slotTimeout()));
 }
 
 void Server::startListen() {
@@ -24,7 +27,6 @@ void Server::newConnection() {
     }
 
     if(sockets.size() > 2) {
-
         QString msg = "Maximum number of clients";
         debugAndUi(msg);
         msg.insert(0, PackHeader::Info);
@@ -44,7 +46,7 @@ void Server::newConnection() {
         return;
     }
 
-    debugAndUi(data.constData());
+    debugAndUi(data.constData() + serverTimerWork);
 
     connect(socket, SIGNAL(readyRead()),this, SLOT(slotReadClient()));
 
@@ -61,6 +63,13 @@ void Server::slotReadClient() {
         }
         parsingPacket(strData, socket);
     }
+
+}
+
+void Server::slotTimeout() {
+    timeWork++;
+    serverTimerWork = "\tServer work: " + QString::number(timeWork) + " s";
+    timer->start(1000);
 
 }
 
@@ -115,7 +124,7 @@ void Server::parsingPacket(QString string, QTcpSocket * socket) { //Parsing the 
         sockets.key(packetToString(string))->write(goodByeMsg.toStdString().c_str());
 
 
-        QString msgForAdmin = "Client " + packetToString(string) + " were disconnected";
+        QString msgForAdmin = "Client " + packetToString(string) + " were disconnected ";
         msgForAdmin.insert(0, PackHeader::Info);
 
         admin.first->write(msgForAdmin.toStdString().c_str());

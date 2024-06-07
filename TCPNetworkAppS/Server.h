@@ -7,6 +7,7 @@
 #include <QFile>
 
 #include <EnumPackHeader.h>
+#include <QTimer>
 
 #include <QDebug>
 
@@ -22,6 +23,9 @@ private:
     QMap<QTcpSocket *,QString> sockets;
     QString password = "pass";
     QPair<QTcpSocket *,QString> admin;
+    QTimer * timer = new QTimer(this);
+    int timeWork = 0;
+    QString serverTimerWork;
     bool flagAdminExists = false;
 
     void debugAndUi(QString string);
@@ -34,6 +38,7 @@ private:
 public slots:
     void newConnection();
     void slotReadClient();
+    void slotTimeout();
 
 signals:
     void signalStringToUi(QString string);
